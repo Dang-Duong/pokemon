@@ -1,11 +1,14 @@
 import { Header } from "./components/header/Header";
-import { PokemonCard } from "./components/ui/PokemonCard";
+import { PokemonCard } from "./components/PokemonCard";
+import AnimationProvider from "./components/ui/animationProvider.tsx/AnimationProvider";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-      <PokemonCard />
+      <AnimationProvider>
+        <Header />
+        <PokemonCard />
+      </AnimationProvider>
     </div>
   );
 }
