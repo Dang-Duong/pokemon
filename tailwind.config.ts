@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        roboto: ["var(--font-roboto)"],
+        "pokemon-solid": ["var(--font-pokemon-solid)"],
+        "pokemon-hollow": ["var(--font-pokemon-hollow)"],
+      },
     },
   },
   plugins: [],

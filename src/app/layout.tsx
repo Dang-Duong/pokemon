@@ -4,14 +4,17 @@ import "./globals.css";
 
 const roboto = localFont({
   src: "../../public/fonts/Roboto-Regular.woff",
+  variable: "--font-roboto",
 });
 
 const pokemonSolid = localFont({
   src: "../../public/fonts/Pokemon-Solid.woff",
+  variable: "--font-pokemon-solid",
 });
 
 const pokemonHollow = localFont({
   src: "../../public/fonts/Pokemon-Hollow.woff",
+  variable: "--font-pokemon-hollow",
 });
 
 export const metadata: Metadata = {
@@ -28,9 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`
-          ${roboto.className}
-          ${pokemonSolid.className}
-          ${pokemonHollow.className}
+          ${roboto.variable}
+          ${pokemonSolid.variable}
+          ${pokemonHollow.variable}
           antialiased
         `}
       >
