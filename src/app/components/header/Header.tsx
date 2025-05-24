@@ -4,6 +4,7 @@ export const Header = () => {
   return (
     <header
       data-animate
+      data-animate-delay="1"
       className="flex flex-col items-center h-full justify-center translate-y-[200px] mt-10 lg:mt-16"
     >
       <Image
