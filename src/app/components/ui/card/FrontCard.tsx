@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/src/app/components/ui/button/Button";
 
 interface FrontCardProps {
   id: number;
@@ -85,12 +86,7 @@ export const FrontCard = ({
         ))}
       </div>
       <div className="w-full p-4">
-        <button
-          onClick={() => handleCardFlip(id)}
-          className="mt-1 w-full bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-3xl flex items-center justify-center gap-2 transition-colors"
-        >
-          View Moves
-        </button>
+        <Button onClick={() => handleCardFlip(id)}>View Moves</Button>
       </div>
     </>
   );

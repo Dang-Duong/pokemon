@@ -1,4 +1,5 @@
-import { PokemonMove } from "@/libs/pokemonApi";
+import { PokemonMove } from "@/src/app/libs/pokemonApi";
+import { Button } from "@/src/app/components/ui/button/Button";
 
 interface BackCardProps {
   types: Array<{ type: { name: string } }>;
@@ -45,12 +46,7 @@ export const BackCard = ({
             ))}
           </div>
         </div>
-        <button
-          onClick={() => handleCardFlip(id)}
-          className="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-3xl flex items-center justify-center gap-2 transition-colors"
-        >
-          Back to Stats
-        </button>
+        <Button onClick={() => handleCardFlip(id)}>Back to Stats</Button>
       </div>
     </div>
   );

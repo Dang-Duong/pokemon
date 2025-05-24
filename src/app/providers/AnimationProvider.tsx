@@ -1,6 +1,6 @@
 "use client";
 
-import { useAnimations } from "@/animations/useAnimations";
+import { useAnimations } from "@/src/app/animations/useAnimations";
 
 export default function AnimationProvider({
   children,
