@@ -181,33 +181,52 @@ export const PokemonCard = () => {
             <div
               key={id}
               data-animate
-              className={`bg-white rounded-3xl shadow-lg flex flex-col items-center relative opacity-0 border-[12px] ${getTypeBorderColor(
-                types[0].type.name
-              )} border-opacity-80 transition-transform duration-700 preserve-3d ${
-                isFlipped ? "flip-card" : "flip-card-normal"
-              }`}
+              className="opacity-0 [perspective:1000px] min-h-[600px]"
             >
-              <FrontCard
-                id={id}
-                name={name}
-                types={types}
-                sprites={sprites}
-                statsData={statsData}
-                statColors={statColors}
-                getTypeColor={getTypeColor}
-                handleCardFlip={handleCardFlip}
-                isFlipped={isFlipped}
-              />
+              <div
+                className={`relative w-full h-full transition-transform duration-1000 [transform-style:preserve-3d] ${
+                  isFlipped
+                    ? "[transform:rotateY(180deg)] [&_.front-only]:[transform:scaleX(-1)]"
+                    : ""
+                }`}
+              >
+                {/* Front of card */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden]">
+                  <div
+                    className={`bg-white rounded-3xl shadow-lg h-full border-[12px] ${getTypeBorderColor(
+                      types[0].type.name
+                    )} border-opacity-80 flex flex-col`}
+                  >
+                    <FrontCard
+                      id={id}
+                      name={name}
+                      types={types}
+                      sprites={sprites}
+                      statsData={statsData}
+                      statColors={statColors}
+                      getTypeColor={getTypeColor}
+                      handleCardFlip={handleCardFlip}
+                    />
+                  </div>
+                </div>
 
-              <BackCard
-                types={types}
-                moves={moves}
-                getTypeColor={getTypeColor}
-                getTypeBorderColor={getTypeBorderColor}
-                handleCardFlip={handleCardFlip}
-                id={id}
-                isFlipped={isFlipped}
-              />
+                {/* Back of card */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <div
+                    className={`bg-white rounded-3xl shadow-lg h-full border-[12px] ${getTypeBorderColor(
+                      types[0].type.name
+                    )} border-opacity-80`}
+                  >
+                    <BackCard
+                      types={types}
+                      moves={moves}
+                      getTypeColor={getTypeColor}
+                      handleCardFlip={handleCardFlip}
+                      id={id}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           );
         })}
