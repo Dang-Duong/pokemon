@@ -28,6 +28,7 @@ export interface Pokemon {
     };
   }>;
   stats: PokemonStat[];
+  moves: PokemonMove[];
 }
 
 export interface PokemonMove {

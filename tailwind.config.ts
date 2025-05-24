@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: [
@@ -47,5 +48,19 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".preserve-3d": {
+          transformStyle: "preserve-3d",
+        },
+        ".flip-card": {
+          transform: "rotateY(180deg) scaleX(-1)",
+        },
+        ".flip-card-normal": {
+          transform: "rotateY(0deg)",
+        },
+      });
+    }),
+  ],
 } satisfies Config;
