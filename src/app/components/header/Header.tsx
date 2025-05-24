@@ -5,7 +5,7 @@ export const Header = () => {
     <header
       data-animate
       data-animate-delay="1"
-      className="flex flex-col items-center h-full justify-center translate-y-[200px] mt-10 lg:mt-16"
+      className="flex flex-col items-center h-full justify-center translate-y-[150px] lg:translate-y-[200px] mt-10 lg:mt-16"
     >
       <Image
         src="/images/logo.svg"

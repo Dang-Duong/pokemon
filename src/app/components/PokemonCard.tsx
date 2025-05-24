@@ -223,6 +223,7 @@ export const PokemonCard = () => {
                       getTypeColor={getTypeColor}
                       handleCardFlip={handleCardFlip}
                       id={id}
+                      allowInternalScroll={isFlipped}
                     />
                   </div>
                 </div>

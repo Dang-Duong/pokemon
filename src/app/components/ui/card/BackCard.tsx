@@ -7,6 +7,7 @@ interface BackCardProps {
   getTypeColor: (type: string) => string;
   handleCardFlip: (id: number) => void;
   id: number;
+  allowInternalScroll?: boolean;
 }
 
 export const BackCard = ({
@@ -15,11 +16,16 @@ export const BackCard = ({
   getTypeColor,
   handleCardFlip,
   id,
+  allowInternalScroll = false,
 }: BackCardProps) => {
   return (
     <div className="p-4 h-full flex flex-col">
       <h3 className="text-xl font-bold mb-4 text-center">Moves</h3>
-      <div className="flex-1 overflow-y-auto">
+      <div
+        className={`flex-1 ${
+          allowInternalScroll ? "overflow-y-auto" : "overflow-hidden"
+        }`}
+      >
         <div className="grid grid-cols-2 gap-2">
           {moves?.map((move: PokemonMove, index: number) => (
             <div

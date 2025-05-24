@@ -12,7 +12,11 @@ export const LoadMore = ({ onLoadMore, loading }: LoadMoreProps) => {
       data-animate-delay="1.5"
       className="flex justify-center my-8 opacity-0"
     >
-      <Button onClick={onLoadMore} disabled={loading} className="!w-[125px]">
+      <Button
+        onClick={onLoadMore}
+        disabled={loading}
+        className="!w-[125px] border-2 border-black"
+      >
         {loading ? "Loading..." : "Load More"}
       </Button>
     </div>
